@@ -1,4 +1,4 @@
-package refactoring_guru.observer.example.listeners;
+package example1.editor.listeners;
 
 import java.io.File;
 
