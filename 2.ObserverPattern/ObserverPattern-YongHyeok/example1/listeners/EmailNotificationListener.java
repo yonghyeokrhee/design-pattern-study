@@ -1,4 +1,4 @@
-package example1.editor.listeners;
+package example1.listeners;
 
 import java.io.File;
 
