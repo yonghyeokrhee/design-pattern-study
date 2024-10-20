@@ -1,6 +1,6 @@
 package example1.editor;
 
-import example1.editor.publisher.EventManager;
+import example1.publisher.EventManager;
 
 import java.io.File;
 

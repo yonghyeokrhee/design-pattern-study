@@ -1,6 +1,6 @@
-package example1.editor.publisher;
+package example1.publisher;
 
-import example1.editor.listeners.EventListener;
+import example1.listeners.EventListener;
 
 import java.io.File;
 import java.util.ArrayList;

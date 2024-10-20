@@ -1,7 +1,8 @@
-package example1.editor;
+package example1;
 
-import example1.editor.listeners.EmailNotificationListener;
-import example1.editor.listeners.LogOpenListener;
+import example1.editor.Editor;
+import example1.listeners.EmailNotificationListener;
+import example1.listeners.LogOpenListener;
 
 public class Demo {
     public static void main(String[] args) {
@@ -10,7 +11,7 @@ public class Demo {
         editor.events.subscribe("save", new EmailNotificationListener("admin@example.com"));
 
         try {
-            editor.openFile("test.txt");
+            editor.openFile("test1.txt");
             editor.saveFile();
         } catch (Exception e) {
             e.printStackTrace();
