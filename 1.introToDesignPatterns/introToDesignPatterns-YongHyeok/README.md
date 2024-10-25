@@ -17,3 +17,4 @@
     - 인터페이스에 대해 프로그래밍 하라. 구현이 아니라.
     - 인터페이스에 대해 프로그래밍 하라는 원칙은 Java인터페이스를 사용하라는 뜻은 아니다. 파이썬에는 Interface 구조체가 없다.즉 이말은 다형성을 활용할 수 있도록 supertype에 대해서 프로그래밍 하라는 뜻이다. 
 - 결국 전략 패턴은 합성(HAS-A)이다.
+  - The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
