@@ -76,7 +76,7 @@ class FileWatcher implements Runnable {
 // Example usage
 public class ObserverPatternFileWatcherDemo {
     public static void main(String[] args) {
-        FileWatcher fileWatcher = new FileWatcher("/Users/chrhee/design-pattern-study/2.ObserverPattern/ObserverPattern-YongHyeok");
+        FileWatcher fileWatcher = new FileWatcher("/Users/yong/design-pattern-study/2.ObserverPattern/ObserverPattern-YongHyeok");
 
         // Register observers (listeners)
         fileWatcher.registerObserver(new FileChangeListener("Listener 1"));
