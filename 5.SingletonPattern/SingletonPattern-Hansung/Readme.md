@@ -55,7 +55,29 @@ public class Singleton {
 ```
 
 ### 3. Double Check를 사용하여 Thread-Safe 를 보장하는 싱글톤 패턴
+```java
+public class Singleton {
+    private volatile static Singleton instance;
 
+    private Sigleton() {}
+    
+    // Double check
+    public Singleton getInstance() {
+     // instance 가 null 인 경우
+     if(instance == null) {
+         // synchronized 를 적용한 후, 한번 더 instance 가 null 인지를 체크
+         synchronized(Singleton.class) {
+            if(instance == null) {
+               instance = new Singleton(); 
+            }
+         }
+      }
+      return uniqueInstance;
+    }
+}
+```
+
+### 4. LazyHolder 를 사용하는 싱글톤 패턴
 ```java
 public class Singleton {
 
@@ -75,4 +97,13 @@ public class Singleton {
 }
 ```
 
+```
+Java 진영에서 가장 많이 사용되는 LazyHolder 를 사용하는 싱글톤 패턴 입니다.
+private static class 인 LazyHolder 안에 instace 를 final 로 선언하는 방법인데요,
+JVM (Java Virtual Machine) 의 클래스의 초기화 과정에서 원자성을 보장하는 원리를 이용하는 방식입니다.
+getInstance() 가 호출되면 LazyHolder의 instance 변수에 접근하는데요, 이때 LazyHolder 가 static class 이기 때문에 클래스의 초기화 과정이 이루어 집니다.
+LazyHolder 클래스가 초기화 되면서 instance 객체의 생성도 이루어 지는데요, JVM 은 이러한 클래스 초기화 과정에서 원자성을 보장합니다.
+따라서, final 로 선언한 instance 는 getInstace() 호출 시 LazyHolder 클래스의 초기화가 이루어 지면서 원자성이 보장된 상태로 단 한번 생성되고, final 변수 이므로 이후로 다시 instance 가 할당되는 것 또한 막을 수 있습니다.
+이러한 방법에 장점은 Synchronzied 를 사용하지 않아도 JVM 자체가 보장하는 원자성을 사용하여 Thread-Safe 하게 싱글톤 패턴을 구현할 수 있는 것 입니다.
+```
 
